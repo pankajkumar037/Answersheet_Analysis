@@ -1,6 +1,6 @@
 python-dotenv
 Groq
-google-genai
+google-generativeai
 fastapi 
 uvicorn 
 streamlit 

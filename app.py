@@ -3,8 +3,6 @@ from PIL import Image
 from model import model_output_with_image, model_output_text
 from Prompts.allprompt import answersheetprompt, questionpaperprompt, question_and_answer_sheet_combined_promt,final_prompt
 
-def extract_text_from_pdf(uploaded_file):
-   pass
 
 def main():
     st.title("Insights from Answer Sheet & Question Paper ")
@@ -42,7 +40,7 @@ def main():
             question_paper_res= model_output_with_image(question_paper, questionpaperprompt())
             st.write("Question Paper Insights:", question_paper_res)
         else:
-            st.warning("Please upload both files to get insights.")
+            st.warning("Please upload files to get insights.")
 
 
         
