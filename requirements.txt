@@ -1,0 +1,8 @@
+python-dotenv
+Groq
+google-genai
+fastapi 
+uvicorn 
+streamlit 
+requests 
+pillow
