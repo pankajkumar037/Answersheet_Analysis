@@ -5,20 +5,24 @@ This project analyzes answersheets by extracting handwritten marks and combining
 
 🚀 Installation
 1. Clone the Repository
-2. cd answersheet_analysis
-3. Install Dependencies
-    pip install -r requirements.txt`
+2. Navigate to the project directory:
+   ```bash
+   cd answersheet_analysis
+   ```
+3. Install Dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Set Up API Key:
+   - Create a `.env` file in the root directory.
+   - Add your Google API key inside the `.env` file:
+     ```
+     GOOGLE_API_KEY=your_api_key_here
+     ```
+   - You can replace this with another service provider if needed.
 
-4.Set Up API Key
-Create a .env file in the root directory.
-
-Add your Google API key inside the .env file:
-
-GOOGLE_API_KEY=your_api_key_here
-You can replace this with another service provider if needed.
-
-🐂 Project Structure
-
+📂 Project Structure
+```
 /ANSWERSHEET_ANALYSIS
   ├── experiment/           # Experimental scripts
   ├── Prompts/              # Prompt templates
@@ -30,11 +34,12 @@ You can replace this with another service provider if needed.
   ├── model.py              # Core model implementation
   ├── README.md             # Project documentation
   └── requirements.txt      # Required dependencies
+```
 
-
-🐜 Usage
+📜 Usage
 Run the model using:
+```bash
 streamlit run app.py
-
-You can use both Question Paper and Answersheet or any one of them
+```
+You can use both the Question Paper and Answersheet, or any one of them independently.
 
