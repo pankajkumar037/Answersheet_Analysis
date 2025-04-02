@@ -1,4 +1,5 @@
 📝 Answersheet Analysis
+
 📌 Overview
 This project analyzes answersheets by extracting handwritten marks and combining them with the corresponding question paper to provide a detailed evaluation. It utilizes Google's Generative AI (Gemini) for intelligent processing.
 
@@ -16,7 +17,7 @@ Add your Google API key inside the .env file:
 GOOGLE_API_KEY=your_api_key_here
 You can replace this with another service provider if needed.
 
-📂 Project Structure
+🐂 Project Structure
 
 /ANSWERSHEET_ANALYSIS
   ├── experiment/           # Experimental scripts
@@ -28,11 +29,12 @@ You can replace this with another service provider if needed.
   ├── LICENSE               # License information
   ├── model.py              # Core model implementation
   ├── README.md             # Project documentation
-  ├── requirements.txt      # Required dependencies
+  └── requirements.txt      # Required dependencies
 
 
-📜 Usage
+🐜 Usage
 Run the model using:
 streamlit run app.py
 
 You can use both Question Paper and Answersheet or any one of them
+
