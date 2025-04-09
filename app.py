@@ -1,7 +1,12 @@
 import streamlit as st
 from PIL import Image
 from model import model_output_with_image, model_output_text
-from Prompts.allprompt import answersheetprompt, questionpaperprompt, question_and_answer_sheet_combined_promt,final_prompt
+
+from Prompts.question_paper_prompt import questionpaperprompt
+from Prompts.answersheet_ocr_prompt import answersheetprompt
+from Prompts.combining_ocr_prompt import question_and_answer_sheet_combined_promt
+from Prompts.final_prompt import final_prompt
+
 
 
 def main():
@@ -43,8 +48,6 @@ def main():
             st.warning("Please upload files to get insights.")
 
 
-        
-
-
+    
 if __name__ == "__main__":
     main()

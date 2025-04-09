@@ -1,9 +1,5 @@
 python-dotenv
 Groq
 google-generativeai
-fastapi 
-uvicorn 
 streamlit 
 requests 
-pillow
-python-multipart
