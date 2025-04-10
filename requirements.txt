@@ -3,3 +3,4 @@ Groq
 google-generativeai
 streamlit 
 requests 
+mistralai
