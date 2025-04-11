@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 from PIL import Image, ExifTags
 
 def auto_orient_image(image):
@@ -22,6 +23,7 @@ def auto_orient_image(image):
 
     return image
 
+
 def crop_marks_section(uploaded_image):
     image = Image.open(uploaded_image)
     image = auto_orient_image(image)
@@ -30,5 +32,18 @@ def crop_marks_section(uploaded_image):
     box = (int(width * 0.42), 0, int(width * 0.80), height)
     cropped_image = image.crop(box)
 
-    return cropped_image
+    gray = cropped_image.convert('L')
+
+    
+    gray_array = np.array(gray) / 255.0
+
+
+    normalized_array = (gray_array * 255).astype(np.uint8)
+
+    normalized_gray_image = Image.fromarray(normalized_array)
+
+    final_rgb_image = normalized_gray_image.convert('RGB')
+
+    return final_rgb_image
+
 

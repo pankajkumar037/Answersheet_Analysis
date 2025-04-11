@@ -35,7 +35,7 @@ def main():
 
 
     if st.button("Get Insights"):
-        st.image(answer_sheet, caption="Answer Sheet", use_column_width=True)
+        #st.image(answer_sheet, caption="Answer Sheet", use_column_width=True)
 
         st.spinner("Generating insights...")
 
