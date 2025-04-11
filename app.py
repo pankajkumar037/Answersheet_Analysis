@@ -7,6 +7,8 @@ from Prompts.answersheet_ocr_prompt import answersheetprompt
 from Prompts.combining_ocr_prompt import question_and_answer_sheet_combined_promt
 from Prompts.final_prompt import final_prompt
 
+from image_process.image_crop import crop_marks_section
+
 
 
 def main():
@@ -17,8 +19,8 @@ def main():
     
     
     if answer_sheet:
-        #st.image(answer_sheet, caption="Answer Sheet", use_column_width=True)
         st.success("Answer Sheet Uploaded Successfully!")
+        answer_sheet = crop_marks_section(answer_sheet)
     else:
         st.warning("Please upload an Answer Sheet.")
     
@@ -27,9 +29,14 @@ def main():
     else:
         st.info("Please upload an Answer Sheet.")
 
+    
+    
+    
 
 
     if st.button("Get Insights"):
+        st.image(answer_sheet, caption="Answer Sheet", use_column_width=True)
+
         st.spinner("Generating insights...")
 
         if answer_sheet and question_paper:
