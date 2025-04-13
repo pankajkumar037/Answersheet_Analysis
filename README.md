@@ -17,29 +17,49 @@ This project analyzes answersheets by extracting handwritten marks and combining
    - Create a `.env` file in the root directory.
    - Add your Google API key inside the `.env` file:
      ```
-     GOOGLE_API_KEY=your_api_key_here
+     MISTRAL_API_KEY=your_api_key_here
      ```
    - You can replace this with another service provider if needed.
 
 📂 Project Structure
 ```
-/ANSWERSHEET_ANALYSIS
-  ├── experiment/           # Experimental scripts
-  ├── Prompts/              # Prompt templates
-  ├── test_image/           # Sample test images
-  ├── .env                  # API keys (add manually)
-  ├── .gitignore            # Ignore unnecessary files
-  ├── app.py                # Main application script
-  ├── LICENSE               # License information
-  ├── model.py              # Core model implementation
-  ├── README.md             # Project documentation
-  └── requirements.txt      # Required dependencies
-```
+ANSWERSHEET_ANALYSIS/
+├── image_process/          # Image cropping and preprocessing
+│   ├── __init__.py
+│   └── image_crop.py
+│
+├── notebooks/              # Jupyter notebooks (optional analysis)
+│
+├── output/                 # Folder to store evaluation results
+│
+├── Prompts/                # Prompt templates for AI evaluations
+│
+├── save_functions/         # Functions for saving in pdf
+│   ├── __init__.py
+│   └── Qn.py
+│
+├── static/                 # Static files like JS and CSS
+│   ├── script.js
+│   └── style.css
+│
+├── templates/              # HTML templates for Flask rendering
+│   └── index.html
+│
+├── test_image/             # Sample test images (add your own)
+│
+├── .env                    # Environment variables like API keys
+├── .gitignore              # Files/folders to ignore in Git
+├── app.py                  # Flask application entry point
+├── LICENSE                 # License information
+├── model.py                # Core model for evaluation
+├── README.md               # Project overview and instructions
+└── requirements.txt        # Python dependencies
+
 
 📜 Usage
 Run the model using:
 ```bash
-streamlit run app.py
+Python app.py
 ```
 You can use both the Question Paper and Answersheet, or any one of them independently.
 
