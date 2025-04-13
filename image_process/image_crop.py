@@ -25,11 +25,11 @@ def auto_orient_image(image):
 
 
 def crop_marks_section(uploaded_image):
-    image = Image.open(uploaded_image)
-    image = auto_orient_image(image)
+    #image = Image.open(uploaded_image)
+    image = auto_orient_image(uploaded_image)
 
     width, height = image.size
-    box = (int(width * 0.42), 0, int(width * 0.80), height)
+    box = (int(width * 0.42), 0, int(width * 0.80), height) #taking only marks part
     cropped_image = image.crop(box)
 
     gray = cropped_image.convert('L')
