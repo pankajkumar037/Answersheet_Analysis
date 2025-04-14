@@ -6,3 +6,5 @@ requests
 mistralai
 flask
 fppdf
+pandas
+openpyxl
