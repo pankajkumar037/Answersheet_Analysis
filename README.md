@@ -25,8 +25,6 @@ This project analyzes answersheets by extracting handwritten marks and combining
 ```
 ANSWERSHEET_ANALYSIS/
 ├── image_process/          # Image cropping and preprocessing
-│   ├── __init__.py
-│   └── image_crop.py
 │
 ├── notebooks/              # Jupyter notebooks (optional analysis)
 │
@@ -34,16 +32,10 @@ ANSWERSHEET_ANALYSIS/
 │
 ├── Prompts/                # Prompt templates for AI evaluations
 │
-├── save_functions/         # Functions for saving in pdf
-│   ├── __init__.py
-│   └── Qn.py
 │
-├── static/                 # Static files like JS and CSS
-│   ├── script.js
-│   └── style.css
-│
+├── static/  
+               # Static files like JS and CSS
 ├── templates/              # HTML templates for Flask rendering
-│   └── index.html
 │
 ├── test_image/             # Sample test images (add your own)
 │
