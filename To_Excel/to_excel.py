@@ -34,17 +34,19 @@ def getting_excel_for_Question_Paper(result):
 
 
 def getting_csv_ans_result(result):
-        insights = result["Answer Sheet Insights"]
-        insights = {k: v for k, v in insights.items() if k != "Total"}
-        os.makedirs("output", exist_ok=True)
-        with open("output/result.csv", mode="w", newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(["Question_Number", "Marks_obtained"])
-            for qno, marks in sorted(insights.items(), key=lambda x: int(x[0][1:])):
-                writer.writerow([qno, marks])
+    insights = result["Answer Sheet Insights"]
+    insights = {k: v for k, v in insights.items() if k.lower() != "total"}
 
-        df = pd.read_csv("output/result.csv")
-        df.to_excel("output/result.xlsx", index=False)
+    os.makedirs("output", exist_ok=True)
+
+    with open("output/result.csv", mode="w", newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Question_Number", "Marks_obtained"])
+        for qno, marks in sorted(insights.items(), key=lambda x: int(x[0])):
+            writer.writerow([qno, marks])
+
+    df = pd.read_csv("output/result.csv")
+    df.to_excel("output/result.xlsx", index=False)
 
 
 
