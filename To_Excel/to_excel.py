@@ -39,7 +39,7 @@ def getting_csv_ans_result(result):
         os.makedirs("output", exist_ok=True)
         with open("output/result.csv", mode="w", newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(["Qno", "Marks"])
+            writer.writerow(["Question_Number", "Marks_obtained"])
             for qno, marks in sorted(insights.items(), key=lambda x: int(x[0][1:])):
                 writer.writerow([qno, marks])
 

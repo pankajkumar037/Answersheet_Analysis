@@ -1,8 +1,11 @@
+
+
 def questionpaperprompt():
     try:
         prompt_Question = f"""
             Extract questions and their maximum marks in JSON format.
             If a question has more than one subpart, then give their subpart but max marks of combined below that whole subpart.
+            And for Question_Number,Give just one time for a Question if ithas subpart or not.
             Give output in json Format not a single other word by yourself just json object.
             your Output should  contain only asked part not antthing other details.
 
