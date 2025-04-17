@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from PIL import Image, UnidentifiedImageError
 # Load environment variables
+from PyPDF2 import PdfReader  # A
 import os
 load_dotenv()
 import google.generativeai as genai
@@ -32,3 +33,14 @@ def model_output_text(prompt: str):
         return response.text
     except Exception as e:
         return f"An error occurred while generating text: {str(e)}"
+    
+
+def model_output_with_pdf(pdf_file, prompt: str):
+    try:
+        reader = PdfReader(pdf_file)
+        text = "\n".join([page.extract_text() or "" for page in reader.pages])
+        combined_prompt = f"{prompt}\n\nExtracted PDF Content:\n{text}"
+        response = model.generate_content(combined_prompt)
+        return response.text
+    except Exception as e:
+        return f"An error occurred while processing the PDF: {str(e)}"
