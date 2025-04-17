@@ -8,3 +8,4 @@ openpyxl
 gunicorn
 google-generativeai
 PyPDF2
+matplotlib
