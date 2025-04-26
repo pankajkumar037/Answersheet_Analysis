@@ -2,7 +2,7 @@ body {
     background-color: #f8f9fa;
 }
 
-img.img-thumbnail {
-    max-height: 200px;
-    margin-top: 10px;
+.img-thumbnail {
+    max-height: 150px;
+    margin: 5px;
 }
