@@ -10,24 +10,23 @@ import base64
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Import prompts
+
 from Prompts.question_paper_prompt import questionpaperprompt
 from Prompts.answersheet_ocr_prompt import answersheetprompt
 from Prompts.combining_ocr_prompt import question_and_answer_sheet_combined_promt
 
-# Image cropper
 from image_process.image_crop import crop_marks_section
 
-# Excel handlers
+
 from To_Excel.to_excel import getting_excel_for_Question_Paper, getting_csv_ans_result, final_marks_to_excel
 
-# Model integration (assuming you have these functions)
+
 from model import model_output_with_image, model_output_with_pdf, model_output_text
 
 app = Flask(__name__)
 app.secret_key = "56161hyjgs"
 
-# Ensure output directory exists
+
 OUTPUT_DIR = "output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
